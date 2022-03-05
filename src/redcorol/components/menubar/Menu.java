@@ -3,12 +3,17 @@ package redcorol.components.menubar;
 import javax.swing.*;
 import java.awt.*;
 
+
+/**
+ *
+ * Menu for Menu bar
+ *
+ * Contains menu items
+ */
 public class Menu extends JMenu {
 
-    private Color backgroundColor = Color.BLUE;
-
     Menu(String name){
-        this.setBackground(this.backgroundColor);
+        this.setBackground(Color.BLUE);
         this.setText(name);
 
 

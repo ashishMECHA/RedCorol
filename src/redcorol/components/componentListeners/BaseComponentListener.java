@@ -3,6 +3,10 @@ package redcorol.components.componentListeners;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 
+
+/**
+ * Component listener for base class
+ */
 public class BaseComponentListener implements ComponentListener {
     @Override
     public void componentResized(ComponentEvent e) {

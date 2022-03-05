@@ -5,19 +5,22 @@ import redcorol.components.Base;
 import javax.swing.*;
 import java.awt.*;
 
-public class MenuBar extends JMenuBar {
-    private Base base;
 
-    private Color backgroundColor = new Color(108, 114, 128);
+/**
+ * Menu Bar for frame
+ */
+public class RCMenuBar extends JMenuBar {
+    private Base base;
 
     private Menu file;
     private Menu edit;
     private Menu help;
     private Menu about;
 
-    public MenuBar(Base base) {
-        this.setBackground(this.backgroundColor);
+    public RCMenuBar(Base base) {
+        this.setBackground(new Color(108, 114, 128));
         this.base = base;
+        this.setBorder(null);
 
         // add components here
         file = new Menu("File");
@@ -41,9 +44,6 @@ public class MenuBar extends JMenuBar {
         return base;
     }
 
-    public Color getBackgroundColor() {
-        return backgroundColor;
-    }
 
     public Menu getFileMenu() {
         return file;

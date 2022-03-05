@@ -1,19 +1,26 @@
 package redcorol.components;
 
-import redcorol.components.bottombar.BottomBar;
+import redcorol.components.bottombar.RCBottomBar;
 import redcorol.components.componentListeners.BaseComponentListener;
-import redcorol.components.menubar.MenuBar;
+import redcorol.components.menubar.RCMenuBar;
+import redcorol.components.toolkit.RCToolkit;
 
 import javax.swing.*;
 import java.awt.*;
 
 
+/**
+ * Base class is main frame for application.
+ *
+ *
+ */
 public class Base extends JFrame{
 
     private BaseComponentListener componentListener;
 
-    private MenuBar menuBar;
-    private BottomBar bottomBar;
+    private RCMenuBar rcMenuBar;
+    private RCBottomBar rcBottomBar;
+    private RCToolkit rcToolkit;
 
     public Base(){
 
@@ -34,21 +41,30 @@ public class Base extends JFrame{
         /*
          * Add bar to app
          * */
-        this.menuBar = new MenuBar(this);
-        this.add(this.menuBar, BorderLayout.NORTH);
+        this.rcMenuBar = new RCMenuBar(this);
+        this.add(this.rcMenuBar, BorderLayout.NORTH);
 
         /*
         * add bottom bar to app
         * */
 
-        this.bottomBar = new BottomBar(this);
-        this.add(bottomBar, BorderLayout.SOUTH);
+        this.rcBottomBar = new RCBottomBar(this);
+        this.add(rcBottomBar, BorderLayout.SOUTH);
+
+        /*
+        * Add Toolkit to app
+        * */
+        this.rcToolkit = new RCToolkit();
+        this.add(rcToolkit,BorderLayout.WEST);
 
         this.setVisible(true);
     }
 
+    public RCBottomBar getRcBottomBar() {
+        return rcBottomBar;
+    }
 
-    public MenuBar getMyMenuBar() {
-        return menuBar;
+    public RCMenuBar getRCMenuBar() {
+        return rcMenuBar;
     }
 }
